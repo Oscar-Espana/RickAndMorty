@@ -1,0 +1,22 @@
+.characters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(44, 43, 43);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 300px;
+  margin: 24px 24px 0px 24px;
+  overflow: hidden;
+}
+
+.card img {
+  object-fit: cover;
+}
