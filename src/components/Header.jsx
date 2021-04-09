@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Header = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const handleClick = () => {
-    setDarkMode(!darkMode);
-  };
-
+const Header = ({ darkMode, handleClick }) => {
   return (
-    <div className="Header">
-      <h1>React Hooks</h1>
-      <button type="button" onClick={handleClick}>
+    <div className="header">
+      <h1>Rick and Morty</h1>
+      <button type="button" className="buttonMode" onClick={handleClick}>
         {darkMode ? "Dark Mode" : "Light Mode"}
       </button>
     </div>

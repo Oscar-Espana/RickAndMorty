@@ -1,12 +1,12 @@
 import React from "react";
 
-const CardCharacter = ({ image, name, status, gender }) => {
+const CardCharacter = ({ image, name, species, gender }) => {
   return (
-    <div className="card">
+    <div className="cardCharacter">
       <img src={image} height="250" width="100%" alt={name} />
-      <h2>{name}</h2>
-      <p>{status}</p>
-      <p>{gender}</p>
+      <h2 className="nameCharacter">{name}</h2>
+      <h3 className="genderCharacter">{gender}</h3>
+      <p className="speciesCharacter">{species}</p>
     </div>
   );
 };
