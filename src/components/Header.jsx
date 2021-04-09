@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
-const Header = ({ darkMode, handleClick }) => {
+const Header = () => {
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
+  const handleClick = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <div className="header">
       <h1>Rick and Morty</h1>
