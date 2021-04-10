@@ -85,5 +85,40 @@ p {
 }
 
 .speciesCharacter {
-  padding-bottom: 24px;
+  padding-bottom: 18px;
+}
+
+.addFavoriteCharacter {
+  background: var(--blue-contrast);
+  color: white;
+  border: none;
+  font-family: Arial;
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.imageFavoriteCharacter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.favoriteCharacter {
+  border-radius: 50%;
+}
+
+.deleteCharacter {
+  position: absolute;
+  right: 12px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  font-size: 17px;
+  background: var(--blue-contrast);
+  color: white;
+  cursor: pointer;
 }
