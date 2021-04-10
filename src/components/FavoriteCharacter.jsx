@@ -1,9 +1,9 @@
 import React from "react";
 
-const FavoriteCharacter = ({ character, handleClick }) => {
-  const { image, name } = character;
+const FavoriteCharacter = ({ character, handleDeleteClick }) => {
+  const { image, name, id } = character;
   return (
-    <div className="">
+    <div className="cardFavoriteCharacter">
       <div className="imageFavoriteCharacter">
         <img
           src={image}
@@ -15,7 +15,7 @@ const FavoriteCharacter = ({ character, handleClick }) => {
         <button
           type="button"
           className="deleteCharacter"
-          onClick={() => handleClick(character)}
+          onClick={() => handleDeleteClick(id)}
         >
           ✖
         </button>

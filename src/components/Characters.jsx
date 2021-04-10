@@ -13,6 +13,13 @@ const favoriteReducer = (state, action) => {
         ...state,
         favorites: [...state.favorites, action.payload],
       };
+    case "DELETE_FAVORITE":
+      const { id } = action.payload;
+      const favoritesAux = state.favorites.filter(
+        (favorite) => favorite.id !== id
+      );
+      return { ...state, favorites: favoritesAux };
+
     default:
       return state;
   }
@@ -32,25 +39,42 @@ const Characters = () => {
     dispatch({ type: "ADD_TO_FAVORITE", payload: favorite });
   };
 
+  const handleDeleteClick = (id) => {
+    dispatch({ type: "DELETE_FAVORITE", payload: { id } });
+  };
+
   return (
-    <div>
-      <div className="characters">
-        {favorites.favorites.map((favorite, key) => (
-          <FavoriteCharacter key={key} character={favorite} />
-        ))}
-      </div>
-      <div className="characters">
-        {characters.map((character, key) => {
-          return (
-            <CardCharacter
-              key={key}
-              character={character}
-              handleClick={handleClick}
-            />
-          );
-        })}
-      </div>
-    </div>
+    <>
+      {favorites?.favorites.length > 0 && (
+        <section className="container">
+          <h2>Favoritos</h2>
+          <div className="characters">
+            {favorites.favorites.map((favorite, key) => (
+              <FavoriteCharacter
+                key={key}
+                character={favorite}
+                handleDeleteClick={handleDeleteClick}
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section className="container">
+        <h2>Personajes</h2>
+        <div className="characters">
+          {characters.map((character, key) => {
+            return (
+              <CardCharacter
+                key={key}
+                character={character}
+                handleClick={handleClick}
+              />
+            );
+          })}
+        </div>
+      </section>
+    </>
   );
 };
 
